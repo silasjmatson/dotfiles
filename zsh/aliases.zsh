@@ -50,7 +50,7 @@ TRAPHUP() {
 
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias reload='source ~/.zshrc'
-alias ae='subl $yadr/zsh/aliases.zsh' #alias edit
+alias ae='code $yadr/zsh/aliases.zsh' #alias edit
 alias ar='source $yadr/zsh/aliases.zsh'  #alias reload
 alias gar="killall -HUP -u \"$USER\" zsh"  #global alias reload
 
@@ -65,11 +65,11 @@ fi
 alias :q='exit'
 
 # vimrc editing
-alias ve='subl ~/.vimrc'
+alias ve='code ~/.vimrc'
 
 # zsh profile editing
-alias ze='subl ~/.zshrc'
-alias ye='subl ~/.yadr'
+alias ze='code ~/.zshrc'
+alias ye='code ~/.yadr'
 
 # Git Aliases
 alias gs='git status'
