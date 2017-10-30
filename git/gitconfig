@@ -11,10 +11,15 @@
   frag = magenta bold
   old = red
   new = green
+[pull]
+    rebase = true
 [alias]
   # add
   a = add                           # add
   chunkyadd = add --patch           # stage commits chunk by chunk
+
+  # Delete local merged branches
+  cleanup = "!git branch --merged master | egrep -v '\\*\\|master' | xargs git branch -d"
 
   # via http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
   snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
@@ -125,3 +130,16 @@
   enabled = true
 [include]
   path = .gitconfig.user
+[user]
+	name = Silas J. Matson
+	email = silas@infinite.red
+	signingkey = 4F97D5697B33014C
+[commit]
+	gpgsign = false
+[gpg]
+	program = gpg
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
